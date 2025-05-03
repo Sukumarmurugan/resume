@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sukumar Murugan | AWS Engineer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Hello, I'm <span class="highlight">Sukumar Murugan</span></h1>
+    <h2 class="typing-text"></h2>
+    <p>🚀 Passionate about building scalable, secure cloud solutions.</p>
+    <div class="actions">
+      <a href="resume.pdf" download class="action-btn">📄 Resume</a>
+      <a href="https://github.com/Sukumarmurugan" target="_blank" class="action-btn">🐱 GitHub</a>
+      <a href="https://linkedin.com/in/sukumarmurugan" target="_blank" class="action-btn">🔗 LinkedIn</a>
+    </div>
+  </header>
+
+  <section class="icon-marquee">
+    <div class="icon-row">
+      <img src="icons/aws.png" alt="AWS" class="icon">
+      <img src="icons/terraform.png" alt="Terraform" class="icon">
+      <img src="icons/docker.png" alt="Docker" class="icon">
+      <img src="icons/python.png" alt="Python" class="icon">
+      <img src="icons/prometheus.png" alt="Prometheus" class="icon">
+      <img src="icons/grafana.png" alt="Grafana" class="icon">
+      <img src="icons/jenkins.png" alt="Jenkins" class="icon">
+      <img src="icons/git.png" alt="Git" class="icon">
+      <img src="icons/github.png" alt="GitHub" class="icon">
+      <img src="icons/linux.png" alt="Linux" class="icon">
+    </div>
+  </section>
+
+  <main>
+    <section class="card">
+      <h3>💼 Skills</h3>
+      <ul>
+        <li>AWS (EC2, S3, Lambda, VPC)</li>
+        <li>Infrastructure as Code: Terraform, CloudFormation</li>
+        <li>CI/CD: GitHub Actions, Jenkins, CodePipeline</li>
+        <li>Linux Admin, Shell Scripting</li>
+        <li>Monitoring: Prometheus, Grafana, CloudWatch</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h3>🛠️ Projects</h3>
+      <ul>
+        <li><strong>Global Web App Deployment</strong> using ALB + Global Accelerator</li>
+        <li><strong>Monitoring Automation</strong> via shell + CloudWatch</li>
+        <li><strong>Disaster Recovery</strong> with EC2 Snapshots and Veeam</li>
+      </ul>
+    </section>
+
+    <section class="card" id="contact">
+      <h3>📬 Contact Me</h3>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Sukumar Murugan. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Typing animation
+    const roles = ["AWS Cloud Engineer", "DevOps Enthusiast", "Linux Administrator"];
+    let i = 0, j = 0, current = "", isDeleting = false;
+
+    function type() {
+      const textElement = document.querySelector(".typing-text");
+      if (i < roles.length) {
+        if (!isDeleting && j <= roles[i].length) {
+          current = roles[i].substring(0, j++);
+        } else if (isDeleting && j >= 0) {
+          current = roles[i].substring(0, j--);
+        }
+
+        textElement.textContent = current;
+
+        if (!isDeleting && j === roles[i].length) {
+          isDeleting = true;
+          setTimeout(type, 1200);
+        } else if (isDeleting && j === 0) {
+          isDeleting = false;
+          i = (i + 1) % roles.length;
+          setTimeout(type, 300);
+        } else {
+          setTimeout(type, isDeleting ? 60 : 100);
+        }
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", type);
+  </script>
+</body>
+</html>
